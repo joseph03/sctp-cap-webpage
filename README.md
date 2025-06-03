@@ -4,6 +4,8 @@ This is the website used in the [`ce-grp-3a` e-commerce website project](http://
 
 This project provides a simple e-commerce frontend served by Nginx, with a button to interact with a fraud detection API. The frontend is containerized using Docker and is designed to be deployed in a Kubernetes environment.
 
+![alt text](image.png)
+
 ---
 
 ## 📦 Features
