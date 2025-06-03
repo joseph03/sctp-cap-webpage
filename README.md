@@ -25,7 +25,7 @@ docker push `<dockerhub-username>`/frontend-static-7766:v1.0.10 .
 A new version has to be used everytime the image is updated. eg. v1.0.11
 
 ### effect the image for deployment 
-Update the version number (eg. v.1.0.10) in previous step to deployment.yaml that cloned from sctp-cap-webCD repo
+Update the version number (eg. v.1.0.10) in previous step to deployment.yaml that cloned from [sctp-cap-webCD repo](https://github.com/joseph03/sctp-cap-webCD)
 
 then git push to sctp-cap-webCD repo and perform
 argocd app sync my-app2  --prune
