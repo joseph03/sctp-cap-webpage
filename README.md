@@ -18,9 +18,9 @@ Proxy Configuration: Nginx is configured to proxy /api/detect requests to a Kube
 ## 🚀 Getting Started (Local)
 
 ### build and push image to your docker hub
-docker build -t '<dockerhub-username>'/frontend-static-7766:v1.0.10 .
+docker build -t `<dockerhub-username>`/frontend-static-7766:v1.0.10 .
 
-docker push '<dockerhub-username>'/frontend-static-7766:v1.0.10 .
+docker push `<dockerhub-username>`/frontend-static-7766:v1.0.10 .
 
 A new version has to be used everytime the image is updated. eg. v1.0.11
 
