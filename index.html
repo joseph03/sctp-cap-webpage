@@ -52,23 +52,25 @@
   <p id="fraudResponse"></p>
 
   <script>
-    async function sendToFraud() {
-      const input = document.getElementById('fraudInput').value;
-      try {
-        const res = await fetch('/api/detect', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ text: input })
-        });
-        
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-        const data = await res.json();
-        document.getElementById('fraudResponse').innerText = data.message;
-      } catch (error) {
-        document.getElementById('fraudResponse').innerText = `Error: ${error.message}`;
-        console.error('API Error:', error);
-      }
+  async function sendToFraud() {
+    const input = document.getElementById('fraudInput').value;
+    try {
+      const res = await fetch('/api/detect', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: input })
+      });
+      
+      const data = await res.json();
+      document.getElementById('fraudResponse').innerText = 
+        data.originalText 
+          ? `Received: ${data.originalText}` 
+          : (data.message || 'No response');
+    } catch (error) {
+      document.getElementById('fraudResponse').innerText = 
+        `Error: ${error.message}`;
     }
+  }  
   </script>
 </body>
 </html>
